@@ -93,14 +93,14 @@ export function Work() {
   return (
     <section
       id="work"
-      className="section-pad texture-dark relative overflow-hidden"
+      className="section-pad texture-paper relative overflow-hidden"
       aria-labelledby="work-title"
     >
       <div className="container-kk">
         <div className="work__head">
           <div>
             <Reveal>
-              <span className="eyebrow text-teal">Selected work</span>
+              <span className="eyebrow text-teal-dark">Selected work</span>
             </Reveal>
             <Reveal delay={80}>
               <h2 id="work-title" className="display work__title">

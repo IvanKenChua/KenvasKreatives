@@ -75,8 +75,16 @@ export function Hero() {
             <figure className="hero-art__frame hero-art__frame--mark">
               <span className="hero-art__mark-canvas">
                 <img
-                  src="/studio/KENVAS.svg"
+                  src="/brand/kenvas-mark.svg"
                   alt="Kenvas Kreatives monogram"
+                  className="hero-art__mark hero-art__mark--ink"
+                  width="595"
+                  height="666"
+                />
+                <img
+                  src="/brand/kenvas-mark-light.svg"
+                  alt=""
+                  className="hero-art__mark hero-art__mark--paper"
                   width="595"
                   height="666"
                 />

@@ -21,14 +21,14 @@
 :root {
   color-scheme: light;
 
-  /* Kenvas Kreatives brand palette, sampled from the official logo and poster */
-  --kk-paper: #f6f4ee;
-  --kk-paper-2: #edeae1;
-  --kk-card: #fffdf7;
-  --kk-ink: #2c2d2c;
-  --kk-ink-2: #1b1c1b;
-  --kk-muted: #67665f;
-  --kk-line: #d8d3c6;
+  /* Light mode: white surfaces with soft gray panels for separation. */
+  --kk-paper: #ffffff;
+  --kk-paper-2: #f3f3f0;
+  --kk-card: #ffffff;
+  --kk-ink: #1b1c1b;
+  --kk-ink-2: #111211;
+  --kk-muted: #5c5d59;
+  --kk-line: #e3e3df;
   --kk-teal: #57c5cd;
   --kk-teal-deep: #2f9aa5;
   --kk-teal-dark: #1f6d75;
@@ -38,57 +38,18 @@
 [data-theme="dark"] {
   color-scheme: dark;
 
-  --kk-paper: #121312;
-  --kk-paper-2: #191a18;
-  --kk-card: #202120;
-  --kk-ink: #f4f1e9;
-  --kk-ink-2: #fbf9f3;
-  --kk-muted: #b3b0a6;
-  --kk-line: #353632;
+  /* Dark mode: black and gray surfaces with light ink. */
+  --kk-paper: #0c0d0c;
+  --kk-paper-2: #151615;
+  --kk-card: #1b1c1b;
+  --kk-ink: #f5f4f0;
+  --kk-ink-2: #fbfaf6;
+  --kk-muted: #a6a7a1;
+  --kk-line: #2c2d2b;
   --kk-teal: #57c5cd;
   --kk-teal-deep: #4fc0c8;
   --kk-teal-dark: #86dbe1;
-  --kk-blue: #7c9fff;
-}
-
-/* These surfaces keep their original palette in both themes. */
-.texture-dark {
-  --color-paper: #f6f4ee;
-  --color-ink: #1b1c1b;
-  --color-ink-2: #1b1c1b;
-  --color-muted: #a5a29a;
-  --color-line: #3a3b38;
-  --color-teal-dark: #7ed7dd;
-}
-
-[data-theme="dark"] .texture-dark {
-  background-color: #0e0f0e;
-}
-
-.hero-art {
-  --color-paper: #f6f4ee;
-  --color-paper-2: #edeae1;
-  --color-card: #fffdf7;
-  --color-ink: #2c2d2c;
-  --color-muted: #67665f;
-  --color-line: #d8d3c6;
-  --color-teal-dark: #1f6d75;
-}
-
-.contact {
-  --color-paper: #f6f4ee;
-  --color-ink: #1b1c1b;
-  --color-muted: #4b4c46;
-  --color-blue: #1d5bff;
-}
-
-.site-footer {
-  --color-paper: #f6f4ee;
-  --color-ink: #1b1c1b;
-  --color-ink-2: #1b1c1b;
-  --color-muted: #a5a29a;
-  --color-line: #3a3b38;
-  --color-teal-dark: #7ed7dd;
+  --kk-blue: #8fa9ff;
 }
 
 @layer base {
@@ -197,21 +158,6 @@
         -45deg,
         color-mix(in srgb, var(--color-ink) 3.5%, transparent) 0 1px,
         transparent 1px 13px
-      );
-  }
-
-  .texture-dark {
-    background-color: var(--color-ink);
-    background-image:
-      repeating-linear-gradient(
-        45deg,
-        color-mix(in srgb, var(--color-paper) 4.5%, transparent) 0 1px,
-        transparent 1px 14px
-      ),
-      repeating-linear-gradient(
-        -45deg,
-        color-mix(in srgb, var(--color-paper) 4.5%, transparent) 0 1px,
-        transparent 1px 14px
       );
   }
 
@@ -374,6 +320,18 @@
   height: 1.45rem;
 }
 
+.brand-lockup__wordmark--paper {
+  display: none;
+}
+
+[data-theme="dark"] .brand-lockup__wordmark--ink {
+  display: none;
+}
+
+[data-theme="dark"] .brand-lockup__wordmark--paper {
+  display: block;
+}
+
 .brand-lockup__sub {
   margin-left: 26%;
   color: var(--color-ink);
@@ -382,10 +340,6 @@
   font-weight: 700;
   letter-spacing: 0.4em;
   line-height: 1;
-}
-
-.brand-lockup--light .brand-lockup__sub {
-  color: #f6f4ee;
 }
 
 /* ---------------------------------------------------------------
@@ -795,6 +749,18 @@
   object-fit: contain;
 }
 
+.hero-art__frame .hero-art__mark--paper {
+  display: none;
+}
+
+[data-theme="dark"] .hero-art__frame .hero-art__mark--ink {
+  display: none;
+}
+
+[data-theme="dark"] .hero-art__frame .hero-art__mark--paper {
+  display: block;
+}
+
 .hero-art__frame figcaption {
   display: flex;
   flex-direction: column;
@@ -1167,14 +1133,14 @@
 .work__title {
   max-width: 11ch;
   margin-top: 1.1rem;
-  color: var(--color-paper);
+  color: var(--color-ink);
   font-size: clamp(2.8rem, 6vw, 5.4rem);
   line-height: 0.94;
 }
 
 .work__lede {
   max-width: 24rem;
-  color: color-mix(in srgb, var(--color-paper) 66%, transparent);
+  color: var(--color-muted);
   font-size: 0.98rem;
   line-height: 1.7;
 }
@@ -1207,9 +1173,9 @@
   width: 100%;
   aspect-ratio: 1;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--color-paper) 14%, transparent);
+  border: 1px solid var(--color-line);
   border-radius: 0.55rem;
-  background: color-mix(in srgb, var(--color-paper) 6%, transparent);
+  background: var(--color-paper-2);
 }
 
 .work-card__media::after {
@@ -1249,11 +1215,11 @@
   top: 0.75rem;
   left: 0.75rem;
   z-index: 2;
-  border: 1px solid color-mix(in srgb, var(--color-paper) 22%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
-  background: rgba(27, 28, 27, 0.45);
+  background: rgba(20, 21, 20, 0.55);
   padding: 0.35rem 0.6rem;
-  color: var(--color-paper);
+  color: #ffffff;
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1268,8 +1234,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  border: 1px solid var(--color-line);
   border-radius: 999px;
-  background: var(--color-paper);
+  background: var(--color-card);
   padding: 0.55rem 0.85rem;
   color: var(--color-ink);
   font-size: 0.68rem;
@@ -1292,13 +1259,13 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-paper) 14%, transparent);
+  border-bottom: 1px solid var(--color-line);
   padding-bottom: 0.85rem;
 }
 
 .work-card__title {
   display: block;
-  color: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-display);
   font-size: 1.02rem;
   font-weight: 600;
@@ -1309,7 +1276,7 @@
 .work-card__category {
   display: block;
   margin-top: 0.35rem;
-  color: color-mix(in srgb, var(--color-paper) 54%, transparent);
+  color: var(--color-muted);
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -1323,9 +1290,9 @@
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  border: 1px solid color-mix(in srgb, var(--color-paper) 22%, transparent);
+  border: 1px solid var(--color-line);
   border-radius: 999px;
-  color: var(--color-paper);
+  color: var(--color-ink);
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease,
@@ -1336,7 +1303,7 @@
 .work-card:hover .work-card__plus {
   border-color: var(--color-teal);
   background: var(--color-teal);
-  color: var(--color-ink);
+  color: #1b1c1b;
   transform: rotate(90deg);
 }
 
@@ -1348,23 +1315,13 @@
   gap: 1rem;
   max-width: 66rem;
   margin: 3rem auto 0;
-  border-top: 1px solid color-mix(in srgb, var(--color-paper) 14%, transparent);
+  border-top: 1px solid var(--color-line);
   padding-top: 1.5rem;
 }
 
 .work__foot p {
-  color: color-mix(in srgb, var(--color-paper) 58%, transparent);
+  color: var(--color-muted);
   font-size: 0.82rem;
-}
-
-.work__foot .link-arrow {
-  color: var(--color-paper);
-  border-color: color-mix(in srgb, var(--color-paper) 30%, transparent);
-}
-
-.work__foot .link-arrow:hover {
-  color: var(--color-teal);
-  border-color: var(--color-teal);
 }
 
 @media (min-width: 640px) {
@@ -1636,7 +1593,8 @@
 .contact {
   position: relative;
   overflow: hidden;
-  background: var(--color-teal);
+  border-top: 1px solid var(--color-line);
+  background: var(--color-paper);
   color: var(--color-ink);
   padding-block: clamp(5rem, 10vw, 8rem);
 }
@@ -1652,12 +1610,12 @@
   background-image:
     repeating-linear-gradient(
       45deg,
-      rgba(44, 45, 44, 0.055) 0 1px,
+      color-mix(in srgb, var(--color-ink) 3%, transparent) 0 1px,
       transparent 1px 14px
     ),
     repeating-linear-gradient(
       -45deg,
-      rgba(44, 45, 44, 0.055) 0 1px,
+      color-mix(in srgb, var(--color-ink) 3%, transparent) 0 1px,
       transparent 1px 14px
     );
   pointer-events: none;
@@ -1669,7 +1627,7 @@
   bottom: -22rem;
   width: 38rem;
   aspect-ratio: 1;
-  border: 1px solid rgba(44, 45, 44, 0.16);
+  border: 1px solid color-mix(in srgb, var(--color-teal) 55%, transparent);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -1678,7 +1636,7 @@
 .contact__arcs::after {
   content: "";
   position: absolute;
-  border: 1px solid rgba(44, 45, 44, 0.12);
+  border: 1px solid color-mix(in srgb, var(--color-teal) 38%, transparent);
   border-radius: 50%;
 }
 
@@ -1688,7 +1646,7 @@
 
 .contact__arcs::after {
   inset: 26%;
-  background: rgba(44, 45, 44, 0.045);
+  background: color-mix(in srgb, var(--color-teal) 14%, transparent);
 }
 
 .contact__title {
@@ -1702,7 +1660,7 @@
 .contact__lede {
   max-width: 32rem;
   margin-top: 1.5rem;
-  color: color-mix(in srgb, var(--color-ink) 85%, transparent);
+  color: color-mix(in srgb, var(--color-ink) 80%, transparent);
   font-size: clamp(1rem, 1.5vw, 1.1rem);
   line-height: 1.7;
 }
@@ -1715,12 +1673,12 @@
 }
 
 .contact__actions .btn--outline {
-  border-color: rgba(44, 45, 44, 0.3);
+  border-color: color-mix(in srgb, var(--color-ink) 28%, transparent);
 }
 
 .contact__actions .btn--outline:hover {
   border-color: var(--color-ink);
-  background: rgba(44, 45, 44, 0.06);
+  background: color-mix(in srgb, var(--color-ink) 6%, transparent);
 }
 
 .contact__details {
@@ -1728,12 +1686,12 @@
   grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
   margin-top: 3.5rem;
-  border-top: 1px solid rgba(44, 45, 44, 0.2);
+  border-top: 1px solid var(--color-line);
   padding-top: 1.5rem;
 }
 
 .contact__detail-label {
-  color: rgba(44, 45, 44, 0.85);
+  color: var(--color-muted);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -1753,7 +1711,7 @@
   align-items: center;
   gap: 0.4rem;
   border: 0;
-  border-bottom: 1px solid rgba(44, 45, 44, 0.35);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 35%, transparent);
   background: transparent;
   padding: 0 0 0.1rem;
   color: var(--color-ink);
@@ -1787,8 +1745,9 @@
    Footer
 ---------------------------------------------------------------- */
 .site-footer {
-  background: var(--color-ink-2);
-  color: var(--color-paper);
+  border-top: 1px solid var(--color-line);
+  background: var(--color-paper-2);
+  color: var(--color-ink);
 }
 
 .site-footer__top {
@@ -1800,7 +1759,7 @@
 
 .site-footer__tagline {
   margin-top: 1.25rem;
-  color: color-mix(in srgb, var(--color-paper) 88%, transparent);
+  color: var(--color-ink);
   font-family: var(--font-serif);
   font-size: 1.45rem;
   font-style: italic;
@@ -1810,7 +1769,7 @@
 .site-footer__note {
   max-width: 22rem;
   margin-top: 0.6rem;
-  color: color-mix(in srgb, var(--color-paper) 58%, transparent);
+  color: var(--color-muted);
   font-size: 0.8rem;
   line-height: 1.65;
 }
@@ -1822,7 +1781,7 @@
 }
 
 .site-footer__heading {
-  color: color-mix(in srgb, var(--color-paper) 60%, transparent);
+  color: var(--color-muted);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -1842,14 +1801,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  color: color-mix(in srgb, var(--color-paper) 72%, transparent);
+  color: var(--color-muted);
   font-size: 0.82rem;
   text-decoration: none;
   transition: color 0.25s ease;
 }
 
 .site-footer__links a:hover {
-  color: var(--color-teal);
+  color: var(--color-teal-dark);
 }
 
 .site-footer__bottom {
@@ -1858,20 +1817,20 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem 1.5rem;
-  border-top: 1px solid color-mix(in srgb, var(--color-paper) 12%, transparent);
+  border-top: 1px solid var(--color-line);
   padding-block: 1.25rem;
-  color: color-mix(in srgb, var(--color-paper) 55%, transparent);
+  color: var(--color-muted);
   font-size: 0.72rem;
 }
 
 .site-footer__bottom a {
-  color: color-mix(in srgb, var(--color-paper) 72%, transparent);
+  color: var(--color-muted);
   text-decoration: none;
   transition: color 0.25s ease;
 }
 
 .site-footer__bottom a:hover {
-  color: var(--color-teal);
+  color: var(--color-teal-dark);
 }
 
 @media (min-width: 768px) {

@@ -1,6 +1,6 @@
 export const site = {
   name: "Kenvas Kreatives",
-  email: "ivankenchua@gmail.com",
+  email: "kenvaskreative@gmail.com",
   facebook: "https://www.facebook.com/KenvasKreative",
   portfolio: "https://ivankenchua.vercel.app",
   portfolioProjects: "https://ivankenchua.vercel.app/projects",

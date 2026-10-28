@@ -36,7 +36,7 @@ export function Navbar() {
     if (themeColor) {
       themeColor.setAttribute(
         "content",
-        theme === "dark" ? "#121312" : "#f6f4ee"
+        theme === "dark" ? "#0c0d0c" : "#ffffff"
       );
     }
   }, [theme]);
@@ -143,7 +143,7 @@ export function Navbar() {
             aria-label="Kenvas Kreatives — back to top"
             onClick={closeMenu}
           >
-            <Logo light={theme === "dark"} />
+            <Logo />
           </a>
 
           <nav

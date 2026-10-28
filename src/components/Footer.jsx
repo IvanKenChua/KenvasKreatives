@@ -19,7 +19,7 @@ export function Footer() {
         <div className="site-footer__top">
           <div>
             <a href="#top" aria-label="Kenvas Kreatives — back to top">
-              <Logo light />
+              <Logo />
             </a>
             <p className="site-footer__tagline">
               Every idea deserves a canvas.
