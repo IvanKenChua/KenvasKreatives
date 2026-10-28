@@ -228,6 +228,32 @@
     box-shadow: 0 14px 28px -18px rgba(44, 45, 44, 0.55);
   }
 
+  /* Primary CTA: brand green in both themes with dark ink text for contrast. */
+  .btn--green {
+    background: var(--color-teal);
+    color: #12211f;
+    box-shadow: 0 10px 24px -14px rgba(47, 154, 165, 0.65);
+  }
+
+  .btn--green:hover {
+    background: var(--color-teal-deep);
+    color: #0c1716;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px -16px rgba(47, 154, 165, 0.7);
+  }
+
+  [data-theme="dark"] .btn--green {
+    background: var(--color-teal);
+    color: #0b1a19;
+    box-shadow: 0 10px 26px -16px rgba(87, 197, 205, 0.55);
+  }
+
+  [data-theme="dark"] .btn--green:hover {
+    background: #7ad9e1;
+    color: #0b1a19;
+    box-shadow: 0 16px 32px -16px rgba(87, 197, 205, 0.6);
+  }
+
   .btn--outline {
     border-color: var(--color-line);
     background: transparent;
@@ -779,44 +805,6 @@
   color: color-mix(in srgb, var(--color-muted) 72%, transparent);
 }
 
-.hero-art__stamp {
-  position: absolute;
-  left: -5%;
-  bottom: 25%;
-  z-index: 3;
-  display: grid;
-  width: 7.1rem;
-  height: 7.1rem;
-  place-items: center;
-  border: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--color-paper) 94%, transparent);
-  box-shadow: 0 18px 30px -22px rgba(44, 45, 44, 0.55);
-  backdrop-filter: blur(4px);
-}
-
-.hero-art__stamp svg {
-  position: absolute;
-  inset: 8%;
-  width: 84%;
-  height: 84%;
-  animation: spin-slow 26s linear infinite;
-}
-
-.hero-art__stamp text {
-  fill: var(--color-ink);
-  font-family: var(--font-body);
-  font-size: 8.4px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-}
-
-.hero-art__stamp-star {
-  color: var(--color-blue);
-  font-size: 1.6rem;
-  line-height: 1;
-}
-
 .hero-art__badge {
   position: absolute;
   top: 0;
@@ -887,16 +875,6 @@
 
   .hero-art__mark {
     width: 30%;
-  }
-
-  .hero-art__stamp {
-    width: 5.6rem;
-    height: 5.6rem;
-    bottom: 24%;
-  }
-
-  .hero-art__stamp-star {
-    font-size: 1.2rem;
   }
 
   .hero-art__badge {
@@ -1594,8 +1572,14 @@
   position: relative;
   overflow: hidden;
   border-top: 1px solid var(--color-line);
-  background: var(--color-paper);
-  color: var(--color-ink);
+  background: var(--color-teal);
+  color: #0f1e1c;
+  /* The section is always neon teal, so its palette stays dark in both themes. */
+  --color-ink: #0f1e1c;
+  --color-ink-2: #08110f;
+  --color-muted: #1b4f4a;
+  --color-line: color-mix(in srgb, #0f1e1c 26%, transparent);
+  --color-blue: #08403c;
   padding-block: clamp(5rem, 10vw, 8rem);
 }
 
@@ -1610,12 +1594,12 @@
   background-image:
     repeating-linear-gradient(
       45deg,
-      color-mix(in srgb, var(--color-ink) 3%, transparent) 0 1px,
+      color-mix(in srgb, #0f1e1c 6%, transparent) 0 1px,
       transparent 1px 14px
     ),
     repeating-linear-gradient(
       -45deg,
-      color-mix(in srgb, var(--color-ink) 3%, transparent) 0 1px,
+      color-mix(in srgb, #0f1e1c 6%, transparent) 0 1px,
       transparent 1px 14px
     );
   pointer-events: none;
@@ -1627,7 +1611,7 @@
   bottom: -22rem;
   width: 38rem;
   aspect-ratio: 1;
-  border: 1px solid color-mix(in srgb, var(--color-teal) 55%, transparent);
+  border: 1px solid color-mix(in srgb, #0f1e1c 32%, transparent);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -1636,7 +1620,7 @@
 .contact__arcs::after {
   content: "";
   position: absolute;
-  border: 1px solid color-mix(in srgb, var(--color-teal) 38%, transparent);
+  border: 1px solid color-mix(in srgb, #0f1e1c 22%, transparent);
   border-radius: 50%;
 }
 
@@ -1646,7 +1630,7 @@
 
 .contact__arcs::after {
   inset: 26%;
-  background: color-mix(in srgb, var(--color-teal) 14%, transparent);
+  background: color-mix(in srgb, #0f1e1c 8%, transparent);
 }
 
 .contact__title {
@@ -1672,13 +1656,26 @@
   margin-top: 2rem;
 }
 
+.contact__actions .btn--ink {
+  background: #0f1e1c;
+  color: #e9fbf7;
+  box-shadow: 0 14px 30px -16px rgba(6, 30, 28, 0.55);
+}
+
+.contact__actions .btn--ink:hover {
+  background: #08110f;
+  color: #ffffff;
+  box-shadow: 0 18px 34px -16px rgba(6, 30, 28, 0.65);
+}
+
 .contact__actions .btn--outline {
-  border-color: color-mix(in srgb, var(--color-ink) 28%, transparent);
+  border-color: color-mix(in srgb, #0f1e1c 34%, transparent);
+  color: #0f1e1c;
 }
 
 .contact__actions .btn--outline:hover {
-  border-color: var(--color-ink);
-  background: color-mix(in srgb, var(--color-ink) 6%, transparent);
+  border-color: #0f1e1c;
+  background: color-mix(in srgb, #0f1e1c 10%, transparent);
 }
 
 .contact__details {
@@ -2111,12 +2108,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes spin-slow {
-  to {
-    transform: rotate(360deg);
   }
 }
 

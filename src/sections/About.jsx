@@ -83,7 +83,7 @@ export function About() {
             </Reveal>
 
             <Reveal className="about__actions" delay={290}>
-              <Button as="a" href="#contact" variant="ink">
+              <Button as="a" href="#contact" variant="green">
                 Work with me
                 <ArrowUpRight size={15} aria-hidden="true" />
               </Button>

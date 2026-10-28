@@ -166,7 +166,7 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <a href="#contact" className="btn btn--ink btn--sm">
+            <a href="#contact" className="btn btn--green btn--sm">
               Start a project
               <ArrowUpRight size={14} aria-hidden="true" />
             </a>
@@ -225,7 +225,7 @@ export function Navbar() {
               <Button
                 as="a"
                 href="#contact"
-                variant="ink"
+                variant="green"
                 size="lg"
                 className="w-full"
                 onClick={closeMenu}

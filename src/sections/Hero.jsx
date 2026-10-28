@@ -48,7 +48,7 @@ export function Hero() {
             </p>
 
             <div className="hero__actions hero-anim hero-anim--4">
-              <Button as="a" href="#contact" variant="ink" size="lg">
+              <Button as="a" href="#contact" variant="green" size="lg">
                 Start a project
                 <ArrowUpRight size={17} aria-hidden="true" />
               </Button>
@@ -94,23 +94,6 @@ export function Hero() {
                 <span>Identity &amp; monogram</span>
               </figcaption>
             </figure>
-
-            <div className="hero-art__stamp" aria-hidden="true">
-              <svg viewBox="0 0 120 120">
-                <defs>
-                  <path
-                    id="kk-stamp-path"
-                    d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"
-                  />
-                </defs>
-                <text>
-                  <textPath href="#kk-stamp-path" startOffset="0">
-                    EVERY IDEA DESERVES A CANVAS · KENVAS KREATIVE ·
-                  </textPath>
-                </text>
-              </svg>
-              <span className="hero-art__stamp-star">✦</span>
-            </div>
 
             <div className="hero-art__badge">
               <span className="hero-art__badge-dot" aria-hidden="true" />
