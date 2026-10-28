@@ -105,7 +105,9 @@ export function Work() {
             <Reveal delay={80}>
               <h2 id="work-title" className="display work__title">
                 Ideas,{" "}
-                <em className="serif-accent">made visible.</em>
+                <em className="serif-accent work__title-accent">
+                  made visible.
+                </em>
               </h2>
             </Reveal>
           </div>

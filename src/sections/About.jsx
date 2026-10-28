@@ -51,7 +51,9 @@ export function About() {
               <h2 id="about-title" className="display about__title">
                 Hi, I&apos;m Ivan{" "}
                 <span className="about__name-mark">Ken</span> —{" "}
-                <em className="serif-accent">the K in Kenvas.</em>
+                <em className="serif-accent about__title-accent">
+                  the K in Kenvas.
+                </em>
               </h2>
             </Reveal>
 

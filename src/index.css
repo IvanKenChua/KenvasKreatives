@@ -605,7 +605,11 @@
 .hero__accent {
   position: relative;
   z-index: 1;
-  color: var(--color-ink);
+  color: var(--color-teal-dark);
+}
+
+[data-theme="dark"] .hero__accent {
+  color: var(--color-teal);
 }
 
 .hero__underline {
@@ -615,7 +619,7 @@
   bottom: -0.08em;
   width: 99%;
   height: 0.16em;
-  color: var(--color-teal);
+  color: var(--color-teal-deep);
   overflow: visible;
 }
 
@@ -1116,6 +1120,14 @@
   line-height: 0.94;
 }
 
+.work__title-accent {
+  color: var(--color-teal-dark);
+}
+
+[data-theme="dark"] .work__title-accent {
+  color: var(--color-teal);
+}
+
 .work__lede {
   max-width: 24rem;
   color: var(--color-muted);
@@ -1500,6 +1512,14 @@
     color-mix(in srgb, var(--color-teal) 32%, transparent) 64%
   );
   padding-inline: 0.03em;
+}
+
+.about__title-accent {
+  color: var(--color-teal-dark);
+}
+
+[data-theme="dark"] .about__title-accent {
+  color: var(--color-teal);
 }
 
 .about__copy {
